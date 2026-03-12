@@ -1,0 +1,6 @@
+@echo off
+echo Starting the Node.js Server...
+echo Opening Infinity Library DBMS in your default browser...
+start http://localhost:3000
+node server.js
+pause
