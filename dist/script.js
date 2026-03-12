@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         const SQL = await initSqlJs({ locateFile: file => `https://sql.js.org/dist/${file}` });
         db = new SQL.Database();
-        db.run(DB_SCHEMA);
+        db.exec(DB_SCHEMA);
         console.log('In-browser SQLite database initialized!');
         fetchSchema();
     } catch (err) {
@@ -622,7 +622,7 @@ if (resetDbBtn) {
         if (!confirmReset) return;
         resetDbBtn.innerHTML = '<div class="spinner"></div> Resetting...';
         try {
-            db.run(DB_SCHEMA);
+            db.exec(DB_SCHEMA);
             showToast("Database Factory Reset Successful");
             closeModal();
             fetchSchema();
